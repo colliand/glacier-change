@@ -1,0 +1,10 @@
+{
+  "id": "hood",
+  "name": "Mount Hood, Oregon",
+  "bbox": [-121.82, 45.30, -121.58, 45.45],
+  "crs": "EPSG:32610",
+  "summit": [-121.6959, 45.3735],
+  "radius_m": 8000,
+  "glims_source": "Portland State University",
+  "era_split_year": 1990
+}

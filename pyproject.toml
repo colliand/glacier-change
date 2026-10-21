@@ -1,0 +1,24 @@
+[project]
+name = "glacier-change"
+version = "0.1.0"
+description = "Glacier area change from Sentinel-2, checked against GLIMS inventory outlines. One config file per region."
+requires-python = "==3.13.*"
+dependencies = [
+    "requests==2.34.2",
+    "pandas==2.3.3",
+    "numpy==2.5.3",
+    "geopandas==1.1.4",
+    "shapely==2.1.2",
+    "pyogrio==0.13.0",
+    "pyproj==3.8.0",
+    "rasterio==1.5.1",
+    "scipy==1.16.2",
+    "pillow>=12.3.0",
+]
+
+[dependency-groups]
+dev = ["pytest"]
+
+[tool.uv]
+package = false
+exclude-newer = "2026-10-09T00:00:00Z"
