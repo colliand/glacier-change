@@ -9,9 +9,11 @@ Glacier area change from Sentinel-2, checked against GLIMS inventory outlines. O
     uv run python -m glacier_change read hood 2025-09-23              # download windows → cache/hood/ (gitignored)
     uv run python -m glacier_change measure hood 2025-09-23           # per-glacier areas → data/hood/areas-*.csv
     uv run python -m glacier_change qc hood sheet.png 2016-09-25 2025-09-23   # check every scene by eye
+    uv run python -m glacier_change landsat hood 2013 2026            # Landsat 8/9, one value per year → data/hood/landsat-*.csv
+    uv run python -m glacier_change landsat-qc hood methods/hood-landsat-series.jpg
 
 Method: ice = red / SWIR (B04 / B11) > 2, patches ≥ 0.01 km², counted within 100 m of a reference outline.
 Debris-covered and dirty ice read as rock, so this measures **visible** snow and clean ice, not glacier extent.
 
 Data: GLIMS Glacier Database (NSIDC, doi:10.7265/N5V98602), outlines by Portland State University (CC0,
-doi:10.15760/geology-data.03). Sentinel-2 L2A via Microsoft Planetary Computer (Copernicus data).
+doi:10.15760/geology-data.03). Sentinel-2 L2A (Copernicus data) and Landsat 8/9 Collection 2 Level-2 (USGS) via Microsoft Planetary Computer.

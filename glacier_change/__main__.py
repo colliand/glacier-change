@@ -5,10 +5,12 @@
     read     REGION DATE [DATE ...]   download the windows for each date → cache/REGION/DATE/
     measure  REGION DATE [DATE ...]   per-glacier ice areas → data/REGION/areas-DATE.csv, prints totals and IoU
     qc       REGION OUT.png DATE ...  contact sheet for checking scenes by eye
+    landsat  REGION [2013 2026]       Landsat 8/9 (no years: recompute the series only) late-season scenes → landsat-scenes.csv, landsat-series.csv
+    landsat-qc REGION OUT.png         contact sheet of the series scenes
 """
 import sys
 
-from . import glims, measure, qc, s2
+from . import glims, landsat, measure, qc, s2
 from .region import load
 
 
@@ -37,6 +39,12 @@ def main(argv):
                   f"zone {df.zone_km2.sum():.2f}  flagged cloud {df.cloud_km2.sum():.2f}  IoU(T2) {df.attrs['iou']:.3f}")
     elif cmd == "qc":
         qc.sheet(r, args[0], args[1:])
+    elif cmd == "landsat":
+        if args:
+            landsat.scenes(r, range(int(args[0]), int(args[1]) + 1))
+        print(landsat.series(r).drop(columns="id").to_string(index=False))
+    elif cmd == "landsat-qc":
+        landsat.qc(r, args[0])
     else:
         raise SystemExit(__doc__)
 
