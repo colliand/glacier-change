@@ -17,3 +17,18 @@ Debris-covered and dirty ice read as rock, so this measures **visible** snow and
 
 Data: GLIMS Glacier Database (NSIDC, doi:10.7265/N5V98602), outlines by Portland State University (CC0,
 doi:10.15760/geology-data.03). Sentinel-2 L2A (Copernicus data) and Landsat 8/9 Collection 2 Level-2 (USGS) via Microsoft Planetary Computer.
+
+## Licence
+
+Open and permissively shared:
+
+- **Code** (`glacier_change/`, `methods/*.py`): [MIT](LICENSE).
+- **Data, figures and text** made here (`data/`, `methods/` notes and images, this README):
+  [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Reuse freely with credit.
+- Third-party files keep their own licences: GLIMS / Portland State University outlines (CC0); the Oregon Glaciers
+  Institute 2023 outlines under `data/hood/external/` (Bakken-French et al. 2024, Zenodo 13356244, CC BY 4.0, cite the
+  original); Sentinel-2 data under the Copernicus terms ("contains modified Copernicus Sentinel data"); Landsat data
+  from USGS (public domain).
+
+Cite as: Colliander, J. (2026). *glacier-change: glacier area change from Sentinel-2, checked against inventory
+outlines.* https://github.com/colliand/glacier-change
