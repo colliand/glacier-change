@@ -1,8 +1,15 @@
 # glacier-change
 
 Glacier area change from Sentinel-2, checked against GLIMS inventory outlines. One config file per region
-(`regions/<id>.json`). Generalized from the Mount Baker method behind whatcom.land
-(`whatcom-land/methods/glacier-outlines.md`), which has the validation history and pitfalls.
+(`regions/<id>.json`). Generalized from the Mount Baker method behind
+[whatcom.land](https://whatcom.land/glaciers). Regions so far:
+
+- `baker`: Mount Baker, Washington ([methods/baker.md](methods/baker.md); note:
+  [notes.colliand.com](https://notes.colliand.com/glaciers/mount-baker)). The validation case: within 1% of the
+  Portland State 2015 outlines.
+- `hood`: Mount Hood, Oregon ([methods/hood.md](methods/hood.md); note:
+  [notes.colliand.com](https://notes.colliand.com/glaciers/mount-hood)). Debris-covered ice: bright ice is not glacier
+  area here.
 
     uv run python -m glacier_change glims hood                        # reference outlines → data/hood/
     uv run python -m glacier_change scenes hood 2025-08-01/2025-10-15 # list scenes

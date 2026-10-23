@@ -1,0 +1,10 @@
+{
+  "id": "baker",
+  "name": "Mount Baker, Washington",
+  "bbox": [-122.0, 48.66, -121.63, 48.89],
+  "crs": "EPSG:32610",
+  "summit": [-121.8145, 48.7767],
+  "radius_m": 10000,
+  "glims_source": "Portland State University",
+  "era_split_year": 1990
+}
